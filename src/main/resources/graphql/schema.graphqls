@@ -1,7 +1,7 @@
 input ProductInput {
-    stock: Int
-    category: String
-    name: String
+    stock: Int!
+    category: String!
+    name: String!
 }
 
 type ProductCatalog {
@@ -13,10 +13,10 @@ type ProductCatalog {
 
 type Query {
     getAllProducts: [ProductCatalog]
-    getProduct(id: ID) : ProductCatalog
+    getProduct(id: Int!) : ProductCatalog
 }
 
 type Mutation {
-    addNewStock(id: ID, stock: Int) : ProductCatalog
-    addNewProduct(product: ProductInput) : ProductCatalog
+    addNewStock(id: Int!, stock: Int!) : ProductCatalog
+    addNewProduct(product: ProductInput!) : ProductCatalog
 }
