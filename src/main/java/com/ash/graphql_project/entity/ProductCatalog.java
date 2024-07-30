@@ -16,11 +16,13 @@ public class ProductCatalog {
 
     public ProductCatalog() {
     }
+
     public ProductCatalog(int stock, String category, String name) {
         this.stock = stock;
         this.category = category;
         this.name = name;
     }
+
     public int getStock() {
         return stock;
     }
