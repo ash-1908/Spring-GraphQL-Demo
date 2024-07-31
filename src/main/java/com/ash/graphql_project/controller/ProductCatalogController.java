@@ -22,22 +22,22 @@ public class ProductCatalogController {
 	private ProductCatalogService productCatalogService;
 
 	@QueryMapping
-	public ProductCatalog getProduct(@Positive @Argument int id) {
-		return productCatalogService.getProduct(id);
+	public ProductCatalog getProductCatalog(@Positive @Argument int id) {
+		return productCatalogService.getProductCatalog(id);
 	}
 
 	@QueryMapping
-	public List<ProductCatalog> getAllProducts() {
-		return productCatalogService.getAllProducts();
+	public List<ProductCatalog> getAllProductCatalogs() {
+		return productCatalogService.getAllProductCatalogs();
 	}
 
 	@MutationMapping
-	public ProductCatalog addNewStock(@Positive @Argument int id, @PositiveOrZero @Argument int stock) {
+	public ProductCatalog addStock(@Positive @Argument int id, @Positive @Argument int stock) {
 		return productCatalogService.addStock(id, stock);
 	}
 
 	@MutationMapping
-	public ProductCatalog addNewProduct(@Valid @Argument ProductCatalogDTO product) {
-		return productCatalogService.addProduct(product);
+	public ProductCatalog addProductCatalog(@Valid @Argument ProductCatalogDTO product) {
+		return productCatalogService.addProductCatalog(product);
 	}
 }

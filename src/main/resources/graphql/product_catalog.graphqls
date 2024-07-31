@@ -1,0 +1,22 @@
+input ProductInput {
+    stock: Int!
+    category: String!
+    name: String!
+}
+
+type ProductCatalog {
+    id: ID
+    stock: Int
+    category: String
+    name: String
+}
+
+type Query {
+    getAllProductCatalogs: [ProductCatalog]
+    getProductCatalog(id: Int!) : ProductCatalog
+}
+
+type Mutation {
+    addStock(id: Int!, stock: Int!) : ProductCatalog
+    addProductCatalog(product: ProductInput!) : ProductCatalog
+}
