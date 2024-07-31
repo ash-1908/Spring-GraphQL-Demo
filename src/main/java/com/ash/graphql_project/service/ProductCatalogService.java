@@ -1,5 +1,6 @@
 package com.ash.graphql_project.service;
 
+import com.ash.graphql_project.dto.ProductCatalogDTO;
 import com.ash.graphql_project.entity.ProductCatalog;
 import com.ash.graphql_project.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +13,10 @@ public class ProductCatalogService {
     @Autowired
     private ProductRepository productRepository;
 
-    public ProductCatalog addProduct(ProductCatalog product) {
+    public ProductCatalog addProduct(ProductCatalogDTO product) {
         //todo validate product
-        ProductCatalog savedProduct = productRepository.save(product);
         //todo handle case for error while saving
-        return savedProduct;
+        return productRepository.save(product.mapToEntity());
     }
 
     public ProductCatalog addStock(int id, int stockCount) {
