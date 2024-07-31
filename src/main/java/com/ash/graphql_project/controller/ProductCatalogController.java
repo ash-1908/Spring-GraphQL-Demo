@@ -14,7 +14,6 @@ import com.ash.graphql_project.service.ProductCatalogService;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Positive;
-import jakarta.validation.constraints.PositiveOrZero;
 
 @Controller
 public class ProductCatalogController {
